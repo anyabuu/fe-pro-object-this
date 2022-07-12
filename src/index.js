@@ -12,28 +12,28 @@ export const hotel = {
 
     checkInGuest(firstName, lastName, money) {
 
-        let newGuest = {
-                    firstName,
-                    lastName,
-                    money
+        function Guest(firstName, lastName, money) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.money = money - hotel.priceByPlace;
         }
 
-        if (this.getActualFreePlace() <= 0){
-            return 'Sorry, we have not free spaces'
-        } else if (newGuest.money < this.priceByPlace) {
+        if (money < this.priceByPlace) {
             return 'Sorry, you have not enough money'
-        } else {
-            newGuest.money = money - hotel.priceByPlace
-            this.bankAccount =  this.bankAccount + this.priceByPlace;
-
-            let newGuestId = Object.keys(this.guests).length + 1
-
-            this.guests = Object.assign(this.guests, {[newGuestId]:newGuest})
-
+        } else if (this.getActualFreePlace() <= 0){
+                return 'Sorry, we have not free spaces'
         }
 
+        this.bankAccount =  this.bankAccount + this.priceByPlace;
+        return this.guests[this.getLength()] = new Guest(firstName, lastName, money);
     }
 
-
 };
+
+
+
+
+
+
+
 

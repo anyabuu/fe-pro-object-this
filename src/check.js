@@ -1,9 +1,10 @@
 import { hotel } from './index.js';
 
-hotel.getLength();
-hotel.checkInGuest('a','b',20)
-hotel.checkInGuest('a','b',20)
 
+hotel.checkInGuest('Mijku','Muk',40)
+
+console.log(hotel.getLength());
+console.log(hotel.bankAccount);
 
 
 console.log(hotel.guests)
