@@ -18,7 +18,7 @@ export const hotel = {
       this.firstName = firstName;
       this.lastName = lastName;
       this.money = money - hotel.priceByPlace;
-      console.log(firstName)
+      console.log(firstName);
     }
 
     if (money < this.priceByPlace) {
